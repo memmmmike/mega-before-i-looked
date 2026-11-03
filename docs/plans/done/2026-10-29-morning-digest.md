@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-02
 ---
 
 # Morning digest
@@ -77,3 +78,17 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader: src/digest, types.ts first | — | claude-code · opus-5.5 · default | 2026-11-02 |
+| 2 | Digest page: GET /digest/:night | #1 | claude-code · sonnet-5.5 · default | 2026-11-02 |
+| 3 | Digest JSON: GET /api/digest/:night | #1 | claude-code · sonnet-5.5 · default | 2026-11-02 |
+| 4 | Status board links each night to its digest, with ok/retry/fail counts | #1 | claude-code · sonnet-5.5 · default | 2026-11-02 |
+| 5 | Route tests for the digest page and JSON | #1 | claude-code · haiku-5.5 · default | 2026-11-02 |
+| 6 | Preview for review: digest 2026-10-28 on a public link | #2 | claude-code · opus-5.5 · default | 2026-11-02 |
+| 7 | Clean up: preview without the lane marker, plan to done | #6 | claude-code · opus-5.5 · default | 2026-11-02 |
+
+The preview at https://rig-digest-preview-smoky.vercel.app was reviewed, then uploaded again over the same link with `LANE_MARKER` unset ("no marker set"), the same day.
