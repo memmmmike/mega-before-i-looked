@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { DigestRow, JobStatus, ReadNight } from './types.js';
 
-type Entry = { at: string; t: number; job: string; status: JobStatus; owner: string | null; error: string | null };
+export type Entry = { at: string; t: number; job: string; status: JobStatus; owner: string | null; error: string | null };
 
 const NIGHT = /^\d{4}-\d{2}-\d{2}$/;
 // An explicit offset is required: it is what the digest shows (styleguide).
@@ -10,7 +10,7 @@ const AT = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})$/;
 const isStatus = (s: unknown): s is JobStatus => s === 'ok' || s === 'retry' || s === 'fail';
 
 // The edge: one log line in, an Entry or null out. A missing owner or error is null.
-function parseLine(line: string): Entry | null {
+export function parseLine(line: string): Entry | null {
   let v: unknown;
   try {
     v = JSON.parse(line);
